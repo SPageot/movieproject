@@ -26,6 +26,7 @@ const MovieCard = () => {
               height="100%"
               url={selectedTrailer}
               controls
+              playing
             />
           </div>
           <div className={styles.video_description_container}>

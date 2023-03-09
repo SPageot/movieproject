@@ -7,6 +7,16 @@
   width: 600px;
   background: linear-gradient(navy, black);
   overflow: scroll;
+  animation: smoothMenu 200ms 1;
+}
+
+@keyframes smoothMenu {
+  0% {
+    right: -600px;
+  }
+  100% {
+    right: 0;
+  }
 }
 
 .change_page_container {
