@@ -1,0 +1,20 @@
+.movielist_container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  height: 100%;
+  width: 600px;
+  background: linear-gradient(navy, black);
+  overflow: scroll;
+}
+
+.image_container {
+  padding: 10px;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.image_container:hover {
+  transform: scale(1.1);
+}

@@ -1,12 +1,17 @@
 import React from "react";
-import Link from "next/link";
+import getAllMovies from "../lib/getAllMovies";
+import { Dashboard } from "../components/block/Dashboard/Dashboard";
+import { MovieCard } from "../components/block/MovieCard/MovieCard";
+import MovieList from "../components/block/MovieList/MovieList";
 
-const Trailers = () => {
+const Trailers = async ({ searchParams: { category, page } }) => {
+  const { movieList } = await getAllMovies(category, page);
+
   return (
-    <div>
-      page
-      <Link href="/">Home</Link>
-    </div>
+    <Dashboard>
+      <MovieCard />
+      {movieList ? <MovieList movieData={movieList} /> : null}
+    </Dashboard>
   );
 };
 
