@@ -1,3 +1,6 @@
+"use client";
+
+import { handleMovieClick } from "@/app/lib/getMovieDetails";
 import { MovieListType } from "@/types";
 import Image from "next/image";
 import React from "react";
@@ -8,6 +11,7 @@ const MovieList = ({ movieData }: MovieListType) => {
     <section className={styles.movielist_container}>
       {movieData?.results?.map((movie) => (
         <Image
+          onClick={() => handleMovieClick(movie?.title)}
           className={styles.image_container}
           key={movie?.id}
           src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`}
