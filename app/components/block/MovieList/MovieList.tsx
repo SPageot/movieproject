@@ -3,16 +3,45 @@
 import { handleMovieClick } from "@/app/lib/getMovieDetails";
 import { useStore } from "@/src/store";
 import { MovieListType } from "@/types";
+import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import React from "react";
 import styles from "./movielist.module.css";
 
 const MovieList = ({ movieData }: MovieListType) => {
   const { isMovieListOpen } = useStore((state) => state);
+  const search = useSearchParams();
+  const router = useRouter();
+  const pageNumber = search.get("page");
+  const categoryType = search.get("category");
+
+  const prevPage = () => {
+    if (Number(pageNumber) > 1) {
+      router.push(
+        `/trailers?category=${categoryType}&page=${String(
+          Number(pageNumber) - 1
+        )}`
+      );
+    }
+  };
+
+  const nextPage = () => {
+    router.push(
+      `/trailers?category=${categoryType}&page=${String(
+        Number(pageNumber) + 1
+      )}`
+    );
+  };
   return (
     <>
       {isMovieListOpen ? (
         <section className={styles.movielist_container}>
+          <div className={styles.change_page_container}>
+            <div className={styles.change_page}>
+              <span onClick={prevPage}>{"< Prev"}</span>
+              <span onClick={nextPage}>{"Next >"}</span>
+            </div>
+          </div>
           {movieData?.results?.map((movie) => {
             return (
               <Image

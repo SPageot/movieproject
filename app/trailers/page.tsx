@@ -3,14 +3,13 @@ import getAllMovies from "../lib/getAllMovies";
 import { MovieCard } from "../components/block/MovieCard/MovieCard";
 import MovieList from "../components/block/MovieList/MovieList";
 
-
 const Trailers = async ({ searchParams: { category, page } }) => {
   const { movieList } = await getAllMovies(category, page);
 
   return (
     <>
       <MovieCard />
-      {movieList ? <MovieList movieData={movieList} /> : null}
+      {movieList ? <MovieList movieData={movieList} category={category} page={page} /> : null}
     </>
   );
 };

@@ -9,6 +9,29 @@
   overflow: scroll;
 }
 
+.change_page_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.change_page {
+  font-size: 30px;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.change_page span {
+  cursor: pointer;
+}
+
+.change_page span:hover {
+  transform: scale(1.1);
+}
+
 .image_container {
   padding: 10px;
   cursor: pointer;
