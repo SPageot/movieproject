@@ -7,9 +7,26 @@
 .video_container {
   width: 100%;
   height: 70%;
+  display: flex;
 }
-
+.image_container {
+  position: relative;
+  width: 20%;
+  height: 100%;
+}
 .video_description_container {
   width: 100%;
   height: 30%;
+  background: linear-gradient(navy, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video_description_container p {
+  width: 50%;
+  height: 50%;
+  color: #fff;
+  font-size: 25px;
+  background: linear-gradient(navy, #000);
 }

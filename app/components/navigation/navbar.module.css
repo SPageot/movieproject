@@ -28,4 +28,27 @@
   justify-content: center;
   align-items: center;
   flex-grow: 0.1;
+  gap: 30px;
+}
+
+.menu_icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  color: #fff;
+  background-color: navy;
+  box-shadow: 0 0 5px #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu_icon:hover {
+    transform: scale(1.1)
+}
+
+.menu_icon:active {
+    transform: scale(0.8)
 }
