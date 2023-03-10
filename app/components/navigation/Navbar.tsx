@@ -68,7 +68,7 @@ const Navbar = () => {
           }
           className={styles.menu_icon}
         >
-          Menu
+          {!isMovieListOpen ? "Menu" : "Close"}
         </button>
       </div>
     </nav>
