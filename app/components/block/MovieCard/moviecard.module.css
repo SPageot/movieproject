@@ -30,3 +30,16 @@
   font-size: 25px;
   background: linear-gradient(navy, #000);
 }
+
+.movie_message {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie_message p {
+  color: #fff;
+  font-size: 30px;
+}

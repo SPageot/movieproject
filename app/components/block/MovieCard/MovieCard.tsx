@@ -33,7 +33,15 @@ const MovieCard = () => {
             <p>{movieInfo?.overview}</p>
           </div>
         </>
-      ) : null}
+      ) : (
+        <div className={styles.movie_message}>
+          <p color="white">
+            Select A Movie {">"}
+            {">"}
+            {">"}
+          </p>
+        </div>
+      )}
     </section>
   );
 };
