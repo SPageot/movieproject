@@ -14,6 +14,9 @@ const Navbar = () => {
       </div>
       <div className={styles.menu_container}>
         <Link
+          onClick={() => {
+            useStore.setState({ isMovieListOpen: true });
+          }}
           href={{
             pathname: "/trailers",
             query: { category: "now_playing", page: 1 },
@@ -22,6 +25,9 @@ const Navbar = () => {
           <span>Now Playing</span>
         </Link>
         <Link
+          onClick={() => {
+            useStore.setState({ isMovieListOpen: true });
+          }}
           href={{
             pathname: "/trailers",
             query: { category: "latest", page: 1 },
@@ -30,6 +36,9 @@ const Navbar = () => {
           <span>Latest</span>
         </Link>
         <Link
+          onClick={() => {
+            useStore.setState({ isMovieListOpen: true });
+          }}
           href={{
             pathname: "/trailers",
             query: { category: "popular", page: 1 },
@@ -38,6 +47,9 @@ const Navbar = () => {
           <span>Popular</span>
         </Link>
         <Link
+          onClick={() => {
+            useStore.setState({ isMovieListOpen: true });
+          }}
           href={{
             pathname: "/trailers",
             query: { category: "top_rated", page: 1 },
@@ -46,6 +58,9 @@ const Navbar = () => {
           <span>Top Rated</span>
         </Link>
         <Link
+          onClick={() => {
+            useStore.setState({ isMovieListOpen: true });
+          }}
           href={{
             pathname: "/trailers",
             query: { category: "upcoming", page: 1 },
