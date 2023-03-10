@@ -2,6 +2,11 @@
   height: 90%;
   width: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3.125rem;
+  align-items: center;
+  background: linear-gradient(navy, black);
 }
 
 .main_image {
@@ -21,7 +26,12 @@
   align-items: center;
 }
 
-.main_description h1 {
+.main h1 {
   color: #fff;
-  font-size: 70px;
+  font-size: 3.125rem;
+}
+
+.main p {
+  color: #fff;
+  font-size: 3.125rem;
 }

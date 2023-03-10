@@ -4,9 +4,12 @@ import { useStore } from "@/src/store";
 import Link from "next/link";
 import React from "react";
 import styles from "./navbar.module.css";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const { isMovieListOpen } = useStore((state) => state);
+  const path = usePathname();
+
   return (
     <nav className={styles.nav}>
       <div className={styles.brandname_container}>
@@ -60,16 +63,18 @@ const Navbar = () => {
       </div>
       <div className={styles.profile_container}>
         <h3>Guest</h3>
-        <button
-          onClick={() =>
-            useStore.setState({
-              isMovieListOpen: !isMovieListOpen ? true : false,
-            })
-          }
-          className={styles.menu_icon}
-        >
-          {!isMovieListOpen ? "Menu" : "Close"}
-        </button>
+        {path !== "/" ? (
+          <button
+            onClick={() =>
+              useStore.setState({
+                isMovieListOpen: !isMovieListOpen ? true : false,
+              })
+            }
+            className={styles.menu_icon}
+          >
+            {!isMovieListOpen ? "Menu" : "Close"}
+          </button>
+        ) : null}
       </div>
     </nav>
   );
