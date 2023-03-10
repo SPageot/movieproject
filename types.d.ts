@@ -8,7 +8,7 @@ export interface MovieType {
   popularity: number;
   poster_path: string | undefined;
   release_date: string;
-  title: string | undefined;
+  title: string;
   video: boolean;
   vote_average: number;
   vote_count: number;
@@ -29,4 +29,10 @@ interface MovieDataType {
 
 export interface MovieListType {
   movieData: MovieDataType;
+}
+
+export interface StoreType {
+  selectedTrailer: string;
+  movieInfo: MovieType | null;
+  isMovieListOpen: boolean;
 }

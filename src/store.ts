@@ -1,7 +1,8 @@
+import { StoreType } from "@/types";
 import { create } from "zustand";
 
-export const useStore = create(() => ({
+export const useStore = create<StoreType>(() => ({
   selectedTrailer: "",
-  movieInfo: {},
-  isMovieListOpen: true,
+  movieInfo: null,
+  isMovieListOpen: false,
 }));

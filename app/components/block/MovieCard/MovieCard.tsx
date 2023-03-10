@@ -10,14 +10,14 @@ const MovieCard = () => {
 
   return (
     <section className={styles.moviecard_container}>
-      {selectedTrailer ? (
+      {selectedTrailer && movieInfo ? (
         <>
           <div className={styles.video_container}>
             <div className={styles.image_container}>
               <Image
                 src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${movieInfo?.poster_path}`}
                 fill
-                alt={movieInfo?.title}
+                alt={movieInfo.title}
               />
             </div>
 

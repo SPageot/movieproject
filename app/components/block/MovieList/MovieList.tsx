@@ -42,7 +42,7 @@ const MovieList = ({ movieData }: MovieListType) => {
               <span onClick={nextPage}>{"Next >"}</span>
             </div>
           </div>
-          {movieData?.results?.map((movie) => (
+          {movieData?.results?.map((movie): React.ReactElement => (
             <Image
               onClick={() => {
                 useStore.setState({
