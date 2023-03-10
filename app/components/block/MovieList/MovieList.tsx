@@ -42,23 +42,23 @@ const MovieList = ({ movieData }: MovieListType) => {
               <span onClick={nextPage}>{"Next >"}</span>
             </div>
           </div>
-          {movieData?.results?.map((movie) => {
-            return (
-              <Image
-                onClick={() => {
-                  useStore.setState({ movieInfo: movie });
-                  handleMovieClick(movie?.title);
-                  useStore.setState({ isMovieListOpen: false });
-                }}
-                className={styles.image_container}
-                key={movie?.id}
-                src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`}
-                alt={movie?.title}
-                width="150"
-                height="250"
-              />
-            );
-          })}
+          {movieData?.results?.map((movie) => (
+            <Image
+              onClick={() => {
+                useStore.setState({
+                  movieInfo: movie,
+                  isMovieListOpen: false,
+                });
+                handleMovieClick(movie?.title);
+              }}
+              className={styles.image_container}
+              key={movie?.id}
+              src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`}
+              alt={movie?.title}
+              width="150"
+              height="250"
+            />
+          ))}
         </section>
       ) : null}
     </>

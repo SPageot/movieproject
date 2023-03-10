@@ -30,17 +30,6 @@ const Navbar = () => {
           }}
           href={{
             pathname: "/trailers",
-            query: { category: "latest", page: 1 },
-          }}
-        >
-          <span>Latest</span>
-        </Link>
-        <Link
-          onClick={() => {
-            useStore.setState({ isMovieListOpen: true });
-          }}
-          href={{
-            pathname: "/trailers",
             query: { category: "popular", page: 1 },
           }}
         >
